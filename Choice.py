@@ -1,4 +1,8 @@
 # Tree for BOT could make decisions
+
+import pickle
+
+
 class Node:
     """Makes new objects which consist of some helpful information.
     Value is a number, not a two-dimensional array, cause it would
@@ -94,6 +98,11 @@ class Tree:
         return True
 
 
+def built_tree():
+    with open('data.pickle', 'rb') as f:
+        return pickle.load(f)
+
+
 # Test
 if __name__ == '__main__':
     import time
@@ -121,3 +130,9 @@ if __name__ == '__main__':
     print('\n')
     print(MyTree.count)
     print('{:.2f}'.format(time.time()-start_time))
+
+    with open('data.pickle', 'wb') as f:
+        pickle.dump(MyTree, f)
+
+    with open('data.pickle', 'rb') as f:
+        print(pickle.load(f).root.children)

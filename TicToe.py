@@ -6,6 +6,11 @@ import sys
 from MainGame import Game
 from GameWithBot import BotGame
 from Home import Home
+from Choice import Tree, Node
+
+# For cashed Tree
+Tree = Tree
+Node = Node
 
 
 def __version__() -> str:

@@ -1,4 +1,4 @@
-from Choice import Tree
+from Choice import built_tree
 from ZeroPlayer import ZeroPlayer
 
 
@@ -6,7 +6,7 @@ class Bot(ZeroPlayer):
     def __init__(self):
         super().__init__()
         self.current_motion = None
-        self.choices = Tree()
+        self.choices = None
 
     def reset(self):
         """Resets whole settings"""
@@ -14,7 +14,7 @@ class Bot(ZeroPlayer):
 
     def start(self):
         """Building Choices Tree and start settings reset"""
-        self.choices.build()
+        self.choices = built_tree()
         self.reset()
 
     def new_motion(self, i, j, motion):
