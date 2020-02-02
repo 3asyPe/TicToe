@@ -15,7 +15,7 @@ vertical_line = pygame.image.load(os.path.join('Pictures', 'Vertical line.png'))
 horizontal_line = pygame.image.load(os.path.join('Pictures', 'Horizontal line.png'))
 
 back_picture = pygame.image.load(os.path.join('Pictures', 'Back.png'))
-loading_picture = pygame.image.load(os.path.join('Pictures', 'KiraLoading.jpg'))
+loading_picture = pygame.image.load(os.path.join('Pictures', 'Loading.jpg'))
 
 
 class GameField:

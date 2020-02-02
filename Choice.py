@@ -99,8 +99,15 @@ class Tree:
 
 
 def built_tree():
-    with open('data.pickle', 'rb') as f:
-        return pickle.load(f)
+    try:
+        with open('data.pickle', 'rb') as f:
+            return pickle.load(f)
+    except FileNotFoundError:
+        with open('data.pickle', 'wb') as f:
+            MyTree = Tree()
+            MyTree.build()
+            pickle.dump(MyTree, f)
+            return MyTree
 
 
 # Test
